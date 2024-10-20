@@ -180,7 +180,9 @@ class MainActivity2 : AppCompatActivity() {
             if (token != null) {
                 createTodo(title, "Bearer $token")
                 fetch()
-                recyclerView.smoothScrollToPosition(todoAdapter.itemCount - 1)
+                if (todoAdapter.itemCount > 0) {
+                    recyclerView.smoothScrollToPosition(todoAdapter.itemCount - 1)
+                }
             }
         }
     }
